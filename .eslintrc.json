@@ -20,6 +20,8 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-plusplus": "off",
+    "no-use-before-define": "off",
     "prettier/prettier": "error",
     "camelcase": "off",
     "import/no-unresolved": "error",
