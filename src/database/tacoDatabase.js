@@ -1,11 +1,7 @@
-import log from "loglevel";
-import sqlite3 from "sqlite3";
+import knex from "knex";
 
-const tacoDatabase = new sqlite3.Database("taco.db", (err) => {
-  if (err) {
-    log.error(err.message);
-  }
-  log.info("Taco database created successfully!");
-});
+import knexfile from "../../knexfile.js";
 
-export { tacoDatabase };
+const db = knex(knexfile);
+
+export { db };

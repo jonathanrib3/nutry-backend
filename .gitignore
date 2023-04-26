@@ -1,4 +1,5 @@
 *.env
+*.sqlite
 node_modules
 /dist
 /tmp

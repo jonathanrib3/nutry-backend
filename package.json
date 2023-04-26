@@ -1,11 +1,21 @@
 {
-  "name": "nodejs-template",
+  "name": "nutry_backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js",
-    "test": "LOG_DISABLED=true jest --no-cache"
+    "test": "LOG_DISABLED=true NODE_OPTIONS=--experimental-vm-modules jest --no-cache",
+    "migration:make": "npx knex migrate:make",
+    "migrate:dev": "npx knex migrate:latest",
+    "migrate:test": "NODE_ENV=test npx knex migrate:latest",
+    "migrate:prod": "NODE_ENV=production npx knex migrate:latest",
+    "migrate-rollback:dev": "npx knex migrate:rollback",
+    "migrate-rollback:test": "NODE_ENV=test npx knex migrate:rollback",
+    "migrate-rollback:prod": "NODE_ENV=production npx knex migrate:rollback",
+    "seed:dev": "npx knex seed:run",
+    "seed:test": "NODE_ENV=test npx knex seed:run",
+    "seed:prod": "NODE_ENV=production npx knex seed:run"
   },
   "type": "module",
   "author": "",
@@ -32,6 +42,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-async-errors": "^3.1.1",
+    "knex": "^2.4.2",
     "loglevel": "^1.8.1",
     "nodemon": "^2.0.15",
     "sqlite3": "^5.1.6"
