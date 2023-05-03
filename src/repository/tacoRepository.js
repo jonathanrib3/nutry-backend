@@ -1,17 +1,16 @@
 import { db } from "../database/tacoDatabase.js";
-import { typesExists } from "./utils/typesExists.js";
 
 const tacoRepository = {
-  findByTypes: async (types) => {
-    if (!typesExists(types)[0]) {
-      throw new Error("Invalid food type");
-    }
-    const data = await db("taco").select("*").whereIn("tipo", types);
-
+  findByTypes: async (types, limit, offset) => {
+    const data = await db("taco")
+      .select("*")
+      .whereIn("tipo", types)
+      .limit(limit)
+      .offset(offset);
     return data;
   },
-  findAll: async () => {
-    const data = await db("taco").select("*");
+  findAll: async (limit, offset) => {
+    const data = await db("taco").select("*").limit(limit).offset(offset);
 
     return data;
   },

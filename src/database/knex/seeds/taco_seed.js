@@ -1,4 +1,4 @@
-import { loadCsvData } from "../../loadCsvData.js";
+import { loadCsvData } from "../../../loadCsvData.js";
 
 /**
  * @param { import("knex").Knex } knex

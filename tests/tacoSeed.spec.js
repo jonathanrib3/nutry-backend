@@ -12,7 +12,6 @@ describe("taco sqlite database seed test", () => {
     const data = await db("taco").select("*");
 
     await db.destroy();
-    await asyncExec("npm run migrate-rollback:test");
 
     // Assert
     expect(data).toHaveLength(596);

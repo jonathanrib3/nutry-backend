@@ -17,13 +17,6 @@ describe("taco repository functions tests", () => {
     expect(data).toHaveLength(8);
   });
 
-  it("should not be able to find all foods from a given invalid type", async () => {
-    expect(async () => {
-      const types = ["Non existent type"];
-      await tacoRepository.findByTypes(types);
-    }).rejects.toThrow("Invalid food type");
-  });
-
   it("should be able to find all foods", async () => {
     const data = await tacoRepository.findAll();
 

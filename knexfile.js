@@ -7,10 +7,10 @@ export default {
   },
   migrations: {
     tableName: "migrations",
-    directory: "./src/database/migrations",
+    directory: "./src/database/knex/migrations",
   },
   seeds: {
-    directory: "./src/database/seeds",
+    directory: "./src/database/knex/seeds",
   },
   useNullAsDefault: true,
   pool: { min: 0, max: 3 },
