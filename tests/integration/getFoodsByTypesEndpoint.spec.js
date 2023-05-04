@@ -15,7 +15,6 @@ describe("GET all foods endpoint /taco integration tests", () => {
   it("should be able to return valid data from /taco/filterByType endpoint", async () => {
     const limit = 10;
     const page = 1;
-
     const data = await request(server)
       .get(`/taco/filterByType/?limit=${limit}&page=${page}`)
       .send({ types: ["Verduras, hortaliças e derivados"] });

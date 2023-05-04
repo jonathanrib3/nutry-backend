@@ -12,13 +12,34 @@ describe("taco repository functions tests", () => {
 
   it("should be able to find all foods from a given valid type", async () => {
     const types = ["Cereais e derivados"];
-    const data = await tacoRepository.findByTypes(types);
+    const limit = 100;
+    const offset = 0;
+    const data = await tacoRepository.findByTypes(types, limit, offset);
 
     expect(data).toHaveLength(8);
   });
 
+  it("should be able page the results from types filter", async () => {
+    const types = ["Cereais e derivados"];
+    const limit = 5;
+    const offset = 0;
+    const data = await tacoRepository.findByTypes(types, limit, offset);
+
+    expect(data).toHaveLength(5);
+  });
+
+  it("should be able to page the results from all foods", async () => {
+    const limit = 10;
+    const offset = 0;
+    const data = await tacoRepository.findAll(limit, offset);
+
+    expect(data).toHaveLength(10);
+  });
+
   it("should be able to find all foods", async () => {
-    const data = await tacoRepository.findAll();
+    const limit = 100;
+    const offset = 0;
+    const data = await tacoRepository.findAll(limit, offset);
 
     expect(data).toHaveLength(16);
   });

@@ -9,6 +9,5 @@ export async function findFoodByTypesUseCase(types, limit, page) {
     throw new AppError(400, "Invalid food type");
   }
   const data = await tacoRepository.findByTypes(types, limit, offset);
-
   return data;
 }

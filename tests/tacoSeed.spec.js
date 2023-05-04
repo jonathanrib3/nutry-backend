@@ -10,7 +10,6 @@ describe("taco sqlite database seed test", () => {
     await asyncExec("npm run seed:test");
 
     const data = await db("taco").select("*");
-
     await db.destroy();
 
     // Assert
