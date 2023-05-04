@@ -35,7 +35,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
-    "supertest": "^6.2.2"
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "csv": "^6.2.7",

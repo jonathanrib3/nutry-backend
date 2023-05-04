@@ -7,7 +7,7 @@ import { fullTextFoodSearchHandler } from "../../handlers/fullTextFoodSearchHand
 const tacoRoutes = Router();
 
 tacoRoutes.get("/taco/", findAllFoodsHandler);
-tacoRoutes.get("/taco/filterByType", findFoodByTypesHandler);
+tacoRoutes.get("/taco/filterByType/", findFoodByTypesHandler);
 tacoRoutes.get("/taco/search/", fullTextFoodSearchHandler);
 
 export { tacoRoutes };
